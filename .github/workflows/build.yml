@@ -5,6 +5,7 @@ on:
     branches: [ "main" ]
     tags:
       - "v*"
+
 jobs:
   build:
     runs-on: macos-latest
@@ -28,9 +29,8 @@ jobs:
         run: |
           pyinstaller --onefile yaproxy.py
 
+      # 👇 ВОТ ТУТ добавляется релиз
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
           files: dist/yaproxy
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
