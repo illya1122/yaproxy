@@ -3,7 +3,8 @@ name: Build yaproxy
 on:
   push:
     branches: [ "main" ]
-
+    tags:
+      - "v*"
 jobs:
   build:
     runs-on: macos-latest
