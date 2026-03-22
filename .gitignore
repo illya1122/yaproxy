@@ -5,3 +5,5 @@ dist/
 build/
 *.specy
 .DS_Store
+
+.DS_Store
