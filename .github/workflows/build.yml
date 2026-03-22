@@ -29,8 +29,8 @@ jobs:
         run: |
           pyinstaller --onefile yaproxy.py
 
-      # 👇 ВОТ ТУТ добавляется релиз
       - name: Create Release
+        if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
           files: dist/yaproxy
